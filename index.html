@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dashboard Administrativo de Analítica de Ventas e Inventario — Actividad Académica CSS Grid & Flexbox" />
+  <title>VentasSuite — Dashboard Analítico</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Syne+Mono&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <input type="checkbox" id="menu-toggle" class="menu-toggle-input" aria-hidden="true" tabindex="-1" />
+
+  <div class="app-container">
+
+    <aside role="navigation" id="sidebar" aria-label="Menú principal de navegación">
+
+      <div class="sidebar-brand" aria-label="VentasSuite — Inicio">
+        <svg class="brand-icon" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true" focusable="false">
+          <rect x="2"  y="2"  width="12" height="12" rx="3" fill="var(--accent)"/>
+          <rect x="18" y="2"  width="12" height="12" rx="3" fill="var(--accent)" opacity="0.45"/>
+          <rect x="2"  y="18" width="12" height="12" rx="3" fill="var(--accent)" opacity="0.45"/>
+          <rect x="18" y="18" width="12" height="12" rx="3" fill="var(--accent)"/>
+        </svg>
+        <span class="brand-name">VentasSuite</span>
+      </div>
+
+      <p class="nav-section-label" aria-hidden="true">MENÚ PRINCIPAL</p>
+
+      <nav aria-label="Secciones del dashboard">
+        <ul class="nav-list" role="list">
+
+          <li class="nav-item">
+            <a href="#main-content" class="nav-link active" aria-current="page" aria-label="Dashboard — sección activa">
+              <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+                <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+                <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+                <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-label="Ver analítica de ventas">
+              <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+              <span>Analítica</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-label="Gestión de inventario">
+              <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+              <span>Inventario</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-label="Ver y gestionar pedidos">
+              <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <path d="M16 10a4 4 0 0 1-8 0"/>
+              </svg>
+              <span>Pedidos</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-label="Gestión de clientes">
+              <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              <span>Clientes</span>
+            </a>
+          </li>
+
+          <li class="nav-divider" role="separator" aria-hidden="true"></li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-label="Configuración del sistema">
+              <svg class="nav-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/>
+                <path d="M12 8V4m0 16v-4M8 12H4m16 0h-4"/>
+              </svg>
+              <span>Configuración</span>
+            </a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer" aria-label="Usuario conectado">
+        <div class="user-mini">
+          <div class="user-avatar-mini" aria-hidden="true">JC</div>
+          <div class="user-info-mini">
+            <span class="user-name-mini">Jean Carlo R.</span>
+            <span class="user-role-mini">Administrador</span>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <header role="banner" id="header">
+
+      <div class="header-left">
+        <label for="menu-toggle" class="hamburger-btn" aria-label="Abrir o cerrar menú lateral de navegación" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){this.click();}">
+          <span class="hamburger-bar" aria-hidden="true"></span>
+          <span class="hamburger-bar" aria-hidden="true"></span>
+          <span class="hamburger-bar" aria-hidden="true"></span>
+        </label>
+
+        <div class="header-title-group">
+          <h1 class="header-title">Dashboard</h1>
+          <span class="header-subtitle" aria-label="Sección: Analítica de Ventas e Inventario">
+            Analítica de Ventas &amp; Inventario
+          </span>
+        </div>
+      </div>
+
+      <div class="header-center">
+        <div class="search-wrapper" role="search" aria-label="Búsqueda global">
+          <label for="search-input" class="sr-only">Buscar en el dashboard</label>
+          <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="search" id="search-input" class="search-input" placeholder="Buscar pedidos, productos, clientes..." aria-label="Buscar pedidos, productos o clientes en el dashboard" />
+        </div>
+      </div>
+
+      <div class="header-right">
+
+        <button class="icon-btn" type="button" aria-label="Notificaciones — 3 nuevas sin leer">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+          <span class="badge" aria-hidden="true">3</span>
+        </button>
+
+        <div class="user-profile" tabindex="0" role="button" aria-haspopup="menu" aria-expanded="false" aria-label="Menú de perfil — Jean Carlo Rincón, Administrador">
+          <div class="user-avatar" aria-hidden="true">JC</div>
+          <div class="user-meta">
+            <span class="user-name">Jean Carlo R.</span>
+            <span class="user-role">Admin</span>
+          </div>
+          <svg class="chevron" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
+
+      </div>
+    </header>
+
+    <main role="main" id="main-content" tabindex="-1" aria-label="Contenido principal del dashboard">
+
+      <section class="kpi-section" aria-labelledby="kpi-heading">
+        <h2 id="kpi-heading" class="section-title">Resumen General</h2>
+
+        <div class="kpi-grid" role="list" aria-label="Indicadores clave de rendimiento">
+
+          <article class="kpi-card" role="listitem" aria-label="Ventas Totales del mes actual">
+            <div class="kpi-card-header">
+              <span class="kpi-label">Ventas Totales</span>
+              <div class="kpi-icon kpi-icon--sales" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </div>
+            </div>
+            <p class="kpi-value" aria-label="Ochenta y cuatro millones trescientos veinte mil pesos">$84.320.000</p>
+            <div class="kpi-footer">
+              <span class="kpi-trend kpi-trend--up" aria-label="Incremento de 12.4% respecto al mes anterior">
+                <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+                  <polyline points="18 15 12 9 6 15"/>
+                </svg>
+                +12.4%
+              </span>
+              <span class="kpi-period">vs. mes anterior</span>
+            </div>
+          </article>
+
+          <article class="kpi-card" role="listitem" aria-label="Usuarios activos en el mes actual">
+            <div class="kpi-card-header">
+              <span class="kpi-label">Usuarios Activos</span>
+              <div class="kpi-icon kpi-icon--users" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+            </div>
+            <p class="kpi-value" aria-label="Dos mil ochocientos cuarenta y siete usuarios">2.847</p>
+            <div class="kpi-footer">
+              <span class="kpi-trend kpi-trend--up" aria-label="Incremento de 8.1% respecto al mes anterior">
+                <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+                  <polyline points="18 15 12 9 6 15"/>
+                </svg>
+                +8.1%
+              </span>
+              <span class="kpi-period">vs. mes anterior</span>
+            </div>
+          </article>
+
+          <article class="kpi-card" role="listitem" aria-label="Total de pedidos pendientes de despacho">
+            <div class="kpi-card-header">
+              <span class="kpi-label">Pedidos Pendientes</span>
+              <div class="kpi-icon kpi-icon--orders" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+                  <line x1="3" y1="6" x2="21" y2="6"/>
+                  <path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+              </div>
+            </div>
+            <p class="kpi-value" aria-label="Ciento cuarenta y tres pedidos">143</p>
+            <div class="kpi-footer">
+              <span class="kpi-trend kpi-trend--down" aria-label="Reducción de 3.2% respecto al mes anterior">
+                <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+                -3.2%
+              </span>
+              <span class="kpi-period">vs. mes anterior</span>
+            </div>
+          </article>
+
+          <article class="kpi-card" role="listitem" aria-label="Tasa de conversión de visitas a compras">
+            <div class="kpi-card-header">
+              <span class="kpi-label">Tasa de Conversión</span>
+              <div class="kpi-icon kpi-icon--conversion" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                </svg>
+              </div>
+            </div>
+            <p class="kpi-value" aria-label="Cuatro punto setenta y tres por ciento">4.73%</p>
+            <div class="kpi-footer">
+              <span class="kpi-trend kpi-trend--up" aria-label="Incremento de 0.5% respecto al mes anterior">
+                <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+                  <polyline points="18 15 12 9 6 15"/>
+                </svg>
+                +0.5%
+              </span>
+              <span class="kpi-period">vs. mes anterior</span>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="chart-section" aria-labelledby="chart-heading">
+        <div class="section-header">
+          <h2 id="chart-heading" class="section-title">Ventas Mensuales — 2025</h2>
+          <div class="chart-controls">
+            <div class="chart-legend" aria-label="Leyenda del gráfico de ventas">
+              <span class="legend-dot" aria-hidden="true"></span>
+              <span class="legend-label">Ventas (COP Millones)</span>
+            </div>
+            <button class="btn-ghost" type="button" aria-label="Exportar datos del gráfico">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Exportar
+            </button>
+          </div>
+        </div>
+
+        <div class="chart-wrapper" role="img" aria-label="Gráfico de barras: ventas mensuales 2025. Picos en agosto ($88M), octubre ($92M) y diciembre ($84M). Mínimo en febrero ($38M).">
+          <div class="chart-inner" aria-hidden="true">
+            <div class="chart-y-axis">
+              <span>$100M</span>
+              <span>$75M</span>
+              <span>$50M</span>
+              <span>$25M</span>
+              <span>$0</span>
+            </div>
+            <div class="chart-bars">
+              <div class="bar-group">
+                <div class="bar" style="--bar-height: 52%"></div>
+                <span class="bar-label">Ene</span>
+              </div>
+              <div class="bar-group">
+                <div class="bar" style="--bar-height: 38%"></div>
+                <span class="bar-label">Feb</span>
+              </div>
+              <div class="bar-group">
+                <div class="bar" style="--bar-height: 65%"></div>
+                <span class="bar-label">Mar</span>
+              </div>
+              <div class="bar-group">
+                <div class="bar" style="--bar-height: 47%"></div>
+                <span class="bar-label">Abr</span>
+              </div>
+              <div class="bar-group">
+                <div class="bar" style="--bar-height: 72%"></div>
+                <span class="bar-label">May</span>
+              </div>
+              <div class="bar-group">
+                <div class="bar" style="--bar-height: 60%"></div>
+                <span class="bar-label">Jun</span>
+              </div>
+              <div class="bar-group">
+                <div class="bar" style="--bar-height: 55%"></div>
+                <span class="bar-label">Jul</span>
+              </div>
+              <div class="bar-group">
+                <div class="bar bar--peak" style="--bar-height: 88%"></div>
+                <span class="bar-label">Ago</span>
+              </div>
+              <div class="bar-group">
+                <div class="bar" style="--bar-height: 63%"></div>
+                <span class="bar-label">Sep</span>
+              </div>
+              <div class="bar-group">
+                <div class="bar bar--peak" style="--bar-height: 92%"></div>
+                <span class="bar-label">Oct</span>
+              </div>
+              <div class="bar-group">
+                <div class="bar" style="--bar-height: 78%"></div>
+                <span class="bar-label">Nov</span>
+              </div>
+              <div class="bar-group">
+                <div class="bar bar--active" style="--bar-height: 84%"></div>
+                <span class="bar-label">Dic</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="table-section" aria-labelledby="table-heading">
+        <div class="section-header">
+          <h2 id="table-heading" class="section-title">Pedidos Recientes</h2>
+          <button class="btn-outline" type="button" aria-label="Ver el listado completo de pedidos">
+            Ver todos
+          </button>
+        </div>
+
+        <div class="table-wrapper" role="region" aria-label="Tabla de pedidos recientes — puede desplazarse horizontalmente" tabindex="0">
+          <table class="data-table">
+            <caption class="sr-only">
+              Últimos 5 pedidos registrados en el sistema, ordenados por fecha descendente. Columnas: ID del pedido, Cliente, Producto, Fecha, Monto y Estado.
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">
+                  <button class="th-sort" type="button" aria-label="Ordenar por ID de pedido, actualmente descendente">
+                    ID Pedido
+                    <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                      <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                  </button>
+                </th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Monto</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="td-id">#PD-00412</td>
+                <td>
+                  <div class="td-client">
+                    <div class="client-avatar" aria-hidden="true">MR</div>
+                    <span>María Rodríguez</span>
+                  </div>
+                </td>
+                <td>Laptop ProBook X1</td>
+                <td><time datetime="2025-12-10">10 Dic 2025</time></td>
+                <td class="td-amount">$3.850.000</td>
+                <td>
+                  <span class="status-badge status--success" role="status" aria-label="Estado: Entregado">Entregado</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-id">#PD-00411</td>
+                <td>
+                  <div class="td-client">
+                    <div class="client-avatar" aria-hidden="true">CA</div>
+                    <span>Carlos Ardila</span>
+                  </div>
+                </td>
+                <td>Monitor 4K Ultrawide</td>
+                <td><time datetime="2025-12-09">09 Dic 2025</time></td>
+                <td class="td-amount">$2.120.000</td>
+                <td>
+                  <span class="status-badge status--warning" role="status" aria-label="Estado: En tránsito">En Tránsito</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-id">#PD-00410</td>
+                <td>
+                  <div class="td-client">
+                    <div class="client-avatar" aria-hidden="true">LG</div>
+                    <span>Laura Gómez</span>
+                  </div>
+                </td>
+                <td>Teclado Mecánico RGB</td>
+                <td><time datetime="2025-12-09">09 Dic 2025</time></td>
+                <td class="td-amount">$480.000</td>
+                <td>
+                  <span class="status-badge status--success" role="status" aria-label="Estado: Entregado">Entregado</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-id">#PD-00409</td>
+                <td>
+                  <div class="td-client">
+                    <div class="client-avatar" aria-hidden="true">JP</div>
+                    <span>Jorge Patiño</span>
+                  </div>
+                </td>
+                <td>Auriculares Bluetooth Pro</td>
+                <td><time datetime="2025-12-08">08 Dic 2025</time></td>
+                <td class="td-amount">$320.000</td>
+                <td>
+                  <span class="status-badge status--danger" role="status" aria-label="Estado: Cancelado">Cancelado</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="td-id">#PD-00408</td>
+                <td>
+                  <div class="td-client">
+                    <div class="client-avatar" aria-hidden="true">AV</div>
+                    <span>Andrea Valencia</span>
+                  </div>
+                </td>
+                <td>Webcam HD 1080p</td>
+                <td><time datetime="2025-12-08">08 Dic 2025</time></td>
+                <td class="td-amount">$215.000</td>
+                <td>
+                  <span class="status-badge status--info" role="status" aria-label="Estado: Procesando">Procesando</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <footer role="contentinfo" id="footer">
+      <div class="footer-content">
+        <p class="footer-copy">
+          &copy; 2025 <strong>VentasSuite</strong> — Dashboard Administrativo
+        </p>
+        <p class="footer-meta">
+          Actividad Académica · HTML5 Semántico · CSS Grid &amp; Flexbox · Vanilla CSS
+        </p>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
